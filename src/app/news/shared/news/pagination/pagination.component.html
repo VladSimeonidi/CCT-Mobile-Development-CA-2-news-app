@@ -1,0 +1,10 @@
+<ion-toolbar class="padding-x">
+  <ion-buttons slot="start">
+    <ion-button color="primary" fill="solid" [disabled]="isFirstPage" (click)="previousPage()">Previous</ion-button>
+  </ion-buttons>
+  <ion-title>{{ currentPage }} / {{ totalPages }}</ion-title>
+  <ion-buttons slot="end">
+    <ion-button color="primary" fill="solid" [disabled]="isLastPage" (click)="nextPage()">Next</ion-button>
+  </ion-buttons>
+</ion-toolbar>
+

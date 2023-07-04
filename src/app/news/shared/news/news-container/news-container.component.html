@@ -1,0 +1,23 @@
+<ng-container *ngIf="data$ | async as data">
+
+  <ion-grid>
+    <ion-row><img ngSrc="assets/logo.png" alt="" height="200" width="400"></ion-row>
+    <ion-row>
+      <ion-col *ngFor="let article of data.articles" sizeXs="12" sizeSm="6" sizeLg="4" sizeXl="3">
+        <app-news-card
+          [title]="article.title"
+          [imageUrl]="article.urlToImage"
+          [author]="article.author"
+          [description]="article.description"
+          [goto]="article.url"
+        ></app-news-card>
+      </ion-col>
+    </ion-row>
+
+    <app-pagination
+      [totalPages]="data.totalResults"
+      (pageChange)="onPageChange($event)"
+    ></app-pagination>
+  </ion-grid>
+
+</ng-container>

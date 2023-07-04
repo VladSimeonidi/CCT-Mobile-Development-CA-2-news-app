@@ -1,0 +1,16 @@
+<ion-card class="app-card app-card-height">
+  <img class="app-card--image" alt="" src="{{imageUrl}}"/>
+  <ion-card-header class="app-card--header">
+    <ion-card-title>{{title}}</ion-card-title>
+    <ion-card-subtitle>{{author}}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content class="app-card--content">
+    {{description}}
+  </ion-card-content>
+
+  <ion-button (click)="goToLink()" fill="clear">Detailed</ion-button>
+  <ion-button [color]="isFavorite ? 'success' : 'primary'" (click)="clickFavorites()">
+    <ion-icon slot="icon-only" size="small" name="star"></ion-icon>
+  </ion-button>
+</ion-card>
