@@ -51,7 +51,3 @@ The app makes API requests to retrieve news articles based on the selected tab. 
 Adding Posts to Favorites:
 
 The app provides a service to add posts to the Favorites tab. This service allows users to save their preferred articles for future reference.
-
-Conclusion:
-
-In conclusion, your news app offers a user-friendly interface with three main tabs, namely Business, General, and Headlines. It includes essential features such as a logo, Favorites tab, Not Found page, and a link button to the homepage. The app also provides API services to fetch news articles and manage user preferences effectively. By implementing these features and functionalities, the news app aims to deliver a comprehensive and engaging news reading experience to its users.
