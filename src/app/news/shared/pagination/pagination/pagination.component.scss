@@ -1,0 +1,13 @@
+.padding-x {
+  padding: 0 10px;
+  margin-top: 1rem;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @media (max-width: 480px) {
+    width: 100px;
+  }
+}

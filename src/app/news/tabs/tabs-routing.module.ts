@@ -8,31 +8,31 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'tab-business',
+        loadChildren: () => import('../tab-business/tab-business.module').then(m => m.TabBusinessModule)
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'tab-general',
+        loadChildren: () => import('../tab-general/tab-general.module').then(m => m.TabGeneralModule)
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'tab-favorites',
+        loadChildren: () => import('../tab-favorites/tab-favorites.module').then(m => m.TabFavoritesModule)
       },
       {
-        path: 'tab4',
-        loadChildren: () => import('../tab4/tab4.module').then(m => m.Tab4PageModule)
+        path: 'tab-headliner',
+        loadChildren: () => import('../tab-headliner/tab-headliner.module').then(m => m.TabHeadlinerModule)
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/tab-business',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/tab-business',
     pathMatch: 'full'
   }
 ];

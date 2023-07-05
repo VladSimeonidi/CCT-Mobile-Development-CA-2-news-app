@@ -14,10 +14,13 @@
       </ion-col>
     </ion-row>
 
-    <app-pagination
-      [totalPages]="data.totalResults"
-      (pageChange)="onPageChange($event)"
-    ></app-pagination>
+    <ion-row>
+      <app-pagination
+        [totalPages]="data.totalResults"
+        (pageChange)="onPageChange($event)"
+      ></app-pagination>
+    </ion-row>
+
   </ion-grid>
 
 </ng-container>

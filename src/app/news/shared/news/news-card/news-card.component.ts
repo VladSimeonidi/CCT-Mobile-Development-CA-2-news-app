@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FavouritesService} from "../services/favourites.service";
+import {FavouritesService} from "../../../services/favourites.service";
 
 @Component({
   selector: 'app-news-card',
@@ -18,12 +18,7 @@ export class NewsCardComponent implements OnInit {
   }
 
   async ngOnInit() {
-    // this.favouritesService.clear()
-    const res = await this.favouritesService.getAllFavorites()
-    console.log(res)
     this.isFavorite = await this.favouritesService.isFavourite(this.title);
-    // console.log(this.title)
-    // console.log(res2)
   }
 
   goToLink() {
