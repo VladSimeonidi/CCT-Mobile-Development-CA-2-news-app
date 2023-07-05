@@ -27,7 +27,6 @@ export class PaginationComponent implements OnInit {
   public nextPage(): void {
     if (!this.isLastPage) {
       this.pageChange.emit(this.currentPage += 1);
-      console.log("sssstest", this.currentPage)
     }
   }
 

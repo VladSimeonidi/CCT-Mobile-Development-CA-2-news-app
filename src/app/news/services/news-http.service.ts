@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {map, Observable} from "rxjs";
 import {Post} from "../models/post";
 import {environment} from "../../../environments/environment";
 
@@ -24,7 +24,7 @@ export class NewsHttpService {
   }
 
   public getPosts(page: number = 1, category: string): Observable<Post> {
-
+    const pageSize: number = 12;
     const URI = API_URL + "/everything";
     const params = new HttpParams()
       .set('q', category)
@@ -33,19 +33,32 @@ export class NewsHttpService {
       .set('page', page)
       .set('apiKey', API_KEY);
 
-    return this.http.get<Post>(URI, {params});
+    return this.http.get<Post>(URI, {params}).pipe(map(post => {
+        return {
+          ...post,
+          totalResults: Math.ceil(post.totalResults / pageSize),
+        }
+      }
+    ));;
   }
 
   public getHeadlines(page: number = 1): Observable<Post> {
+    const pageSize: number = 12;
     const URI = API_URL + "/top-headlines";
     const params = new HttpParams()
       .set('country', 'ie')
       .set('sortBy', 'popularity')
-      .set('pageSize', '12')
+      .set('pageSize', pageSize)
       .set('page', page)
       .set('apiKey', API_KEY);
 
-    return this.http.get<Post>(URI, {params});
+    return this.http.get<Post>(URI, {params}).pipe(map(post => {
+        return {
+          ...post,
+          totalResults: Math.ceil(post.totalResults / pageSize),
+        }
+      }
+    ));
   }
 
 }
