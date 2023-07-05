@@ -1,4 +1,4 @@
-<ng-container *ngIf="data$ | async as data">
+<ng-container *ngIf="data$ | async as data; else loading">
 
   <ion-grid>
     <ion-row><img ngSrc="assets/logo.png" alt="" height="200" width="400"></ion-row>
@@ -24,3 +24,9 @@
   </ion-grid>
 
 </ng-container>
+
+<ng-template #loading>
+  <div class="spinner-container">
+    <ion-spinner color="primary" name="circular"></ion-spinner>
+  </div>
+</ng-template>
